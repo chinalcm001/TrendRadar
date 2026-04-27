@@ -113,19 +113,47 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
+    # 科技（高频 + 权威）
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      enabled: false                  # 禁用
-      # max_age_days: 3               # 示例：推送 3 天内的文章（更新较慢的博客）
-     
+    - id: "mit-technology-review"
+      name: "MIT Technology Review"
+      url: "https://www.technologyreview.com/feed/"
+
+    - id: "ars-technica"
+      name: "Ars Technica"
+      url: "https://feeds.arstechnica.com/arstechnica/index"
+
+    - id: "the-verge"
+      name: "The Verge"
+      url: "https://www.theverge.com/rss/index.xml"
+
+    # 经济金融（主流媒体 + 监管机构）
+    - id: "wsj-markets"
+      name: "WSJ Markets"
+      url: "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+
+    - id: "wsj-world-news"
+      name: "WSJ World News"
+      url: "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+
+    - id: "ft-technology"
+      name: "Financial Times Technology"
+      url: "https://www.ft.com/technology?format=rss"
+
+    - id: "ft-markets"
+      name: "Financial Times Markets"
+      url: "https://www.ft.com/markets?format=rss"
+
     - id: "yahoo-finance"
-      name: "雅虎财经"
+      name: "Yahoo Finance"
       url: "https://finance.yahoo.com/news/rssindex"
+
+    - id: "sec-press-releases"
+      name: "U.S. SEC Press Releases"
+      url: "https://www.sec.gov/news/pressreleases.rss"
 
     # 自定义源示例
     # - id: "custom-feed"
