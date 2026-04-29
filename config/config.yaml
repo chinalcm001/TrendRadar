@@ -179,6 +179,11 @@ rss:
       name: "Stratechery"
       url: "https://stratechery.com/feed/"
 
+    - id: "anthropic-blog"
+      name: "Anthropic Blog"
+      url: "https://www.anthropic.com/news"
+      enabled: false                  # 官网暂未提供公开 RSS，先占位；有可用 feed 后再开启
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
