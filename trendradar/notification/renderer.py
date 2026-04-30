@@ -6,6 +6,7 @@
 """
 
 from datetime import datetime
+import re
 from typing import Dict, List, Optional, Callable
 
 from trendradar.report.formatter import format_title_for_platform
@@ -13,6 +14,17 @@ from trendradar.report.formatter import format_title_for_platform
 
 # 默认区域顺序
 DEFAULT_REGION_ORDER = ["hotlist", "rss", "new_items", "standalone", "ai_analysis"]
+
+
+def _compact_summary(summary: str, max_len: int = 140) -> str:
+    """清洗并压缩 RSS 摘要，用于仅标题+简要场景。"""
+    if not summary:
+        return ""
+    clean = re.sub(r"<[^>]+>", "", summary)
+    clean = re.sub(r"\s+", " ", clean).strip()
+    if len(clean) > max_len:
+        clean = clean[:max_len].rstrip() + "…"
+    return clean
 
 
 def render_feishu_content(
@@ -322,6 +334,10 @@ def _render_rss_section_feishu(rss_items: list, separator: str = "---") -> str:
 
             text_content += "\n"
 
+            summary = _compact_summary(item.get("summary", ""))
+            if summary:
+                text_content += f"     <font color='grey'>摘要：{summary}</font>\n"
+
             if i < len(items):
                 text_content += "\n"
 
@@ -364,6 +380,10 @@ def _render_rss_section_markdown(rss_items: list) -> str:
                 text_content += f" `{published_at}`"
 
             text_content += "\n"
+
+            summary = _compact_summary(item.get("summary", ""))
+            if summary:
+                text_content += f"     - 摘要：{summary}\n"
 
         text_content += "\n"
 

@@ -184,6 +184,50 @@ rss:
       url: "https://www.anthropic.com/news"
       enabled: false                  # 官网暂未提供公开 RSS，先占位；有可用 feed 后再开启
 
+
+    # CHUANMU 扩展资讯源（国际优先；部分源仅标题/摘要）
+    - id: "techcrunch"
+      name: "TechCrunch"
+      url: "https://techcrunch.com/feed/"
+
+    - id: "cnbc-top-news"
+      name: "CNBC Top News"
+      url: "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+
+    - id: "reuters-world"
+      name: "Reuters World News"
+      url: "https://feeds.reuters.com/Reuters/worldNews"
+
+    - id: "reuters-business"
+      name: "Reuters Business News"
+      url: "https://feeds.reuters.com/reuters/businessNews"
+
+    - id: "ap-top-news"
+      name: "AP Top News"
+      url: "https://feeds.apnews.com/apf-topnews"
+
+    - id: "marketwatch-top-stories"
+      name: "MarketWatch Top Stories"
+      url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"
+
+    - id: "tradingeconomics"
+      name: "TradingEconomics News"
+      url: "https://api.tradingeconomics.com/news?f=rss"
+
+    - id: "federal-reserve-press"
+      name: "Federal Reserve Press Releases"
+      url: "https://www.federalreserve.gov/feeds/press_all.xml"
+
+    - id: "sec-press-releases-archive"
+      name: "SEC Press Releases Archive"
+      url: "https://www.sec.gov/news/pressreleases.rss"
+
+    - id: "cointelegraph-tech"
+      name: "Cointelegraph (Tech/Markets signal)"
+      url: "https://cointelegraph.com/rss"
+      enabled: false                  # 默认关闭：加密噪音较高，按需开启
+
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
